@@ -24,21 +24,23 @@ match s with
     reachability' g (t ++ g h) (o.insert h)
 termination_by ((Finset.univ.filter (· ∉ o)).card, s)
 decreasing_by
-  right
-  simp_wf
-  left
-  refine Finset.card_lt_card ?_
-  refine Finset.ssubset_iff_subset_ne.mpr ?_
-  constructor
   ·
-    refine Finset.subset_iff.mpr ?_
-    intro x hx
-    simp_all
+    right
+    simp_wf
   ·
-    intro c
-    apply congrArg (h ∈ ·) at c
-    simp at c
-    exact _p c
+    left
+    apply Finset.card_lt_card
+    apply Finset.ssubset_iff_subset_ne.mpr
+    constructor
+    ·
+      apply Finset.subset_iff.mpr
+      intro x hx
+      simp_all
+    ·
+      intro c
+      apply congrArg (h ∈ ·) at c
+      simp at c
+      exact _p c
 
 -- The wrapper
 def reachability
