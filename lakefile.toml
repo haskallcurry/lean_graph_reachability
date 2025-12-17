@@ -1,0 +1,14 @@
+name = "Graph"
+version = "0.1.0"
+defaultTargets = ["reachability_demo"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+
+[[lean_lib]]
+name = "Graph"
+
+[[lean_exe]]
+name = "reachability_demo"
+root = "Main"
