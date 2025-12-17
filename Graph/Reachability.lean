@@ -162,7 +162,7 @@ lemma reachability_lemma_o
     simp_all
 
 -- Also a simple lemma about reachability'
--- If a node is active (in the stack s),
+-- If a node is in the stack s
 -- then it will be included in the visited vertices
 lemma reachability_lemma_s
   {n: Nat}
@@ -194,7 +194,7 @@ lemma reachability_lemma_s
       apply ih
       simp_all
 
--- All unvisited vertices adjacent to visited vertices must be active
+-- All unvisited vertices adjacent to visited vertices must be in the stack
 def condition
   {n: Nat}
   (g: graph n)
